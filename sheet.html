@@ -1,0 +1,163 @@
+<div class="sheet-flx-row">
+    <div class="sheet-flx-col-xs">
+        <div class="sheet-flx-row">
+            <h3>Base Information</h3>
+            Type: <input name="attr_type"/>
+            Tonnage: <input type="number" name="attr_tonnage" min="10" max="100"/>
+            Technology Base: <select name="attr_techbase"><option value="is">Inner Sphere</option><option value="clan">Clan</option></select>
+            Engine Rating: <input name="attr_enginerating" type="number" min="10" max="400"/> 
+                <input name="attr_enginetype" value="1" type="radio" checked/> Standard 
+                <input name="attr_enginetype" value="0.5" type="radio"/> XL 
+        </div>
+        <div class="sheet-flx-row">
+            <h3>Movement Points:  </h3>
+            Walking: <input name="attr_mpwalk" type="number" min="1" max="100" disabled="true" value="round(@{enginerating}/@{tonnage})"/>
+            Running: <input name="attr_mprun" type="number" min="1" max="100" disabled="true" value="round(@{mpwalk}*1.5)"/>
+            Jumping: <input name="attr_mpjump" type="number" min="1" max="100"/>
+        </div>
+        <div class="sheet-flx-row">
+            <h3>Pilot Info</h3>
+                Name: <input name="attr_pilotname"/>
+                Gunnery Skill: <input name="attr_gunnery" type="number" min="0" max="6"/>
+                Piloting Skill: <input name="attr_piloting" type="number" min="0" max="6"/>
+                Hits Taken: <select name="attr_pilothits">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                </select> 
+        </div>
+    </div>
+    <div class="sheet-flx-col-xs">
+        <h3>Armor</h3>
+        <table>
+            <tr>
+                <th>Location</th>
+                <th>Armor</th>
+                <th>Base Armor</th>
+                <th>Internal Structure</th>
+                <th>Base Internal Structure</th>
+            </tr>
+            <tr>
+                <td>Right Arm</td>
+                <td><input name="attr_armor_ra" type="number" min="0" max="32"></td>
+                <td><input name="attr_armor_ra_max" type="number" min="0" max="32"></td>
+                <td><input name="attr_is_ra" type="number" min="0" max="17"></td>
+                <td><input name="attr_is_ra_max" type="number" min="0" max="17"></td>
+            </tr>
+            <tr>
+                <td>Right Torso</td>
+                <td><input name="attr_armor_rt" type="number" min="0" max="42"></td>
+                <td><input name="attr_armor_rt_max" type="number" min="0" max="42"></td>
+                <td><input name="attr_is_rt" type="number" min="0" max="21"></td>
+                <td><input name="attr_is_rt_max" type="number" min="0" max="21"></td>
+            </tr>
+            <tr>
+                <td>Right Leg</td>
+                <td><input name="attr_armor_rl" type="number" min="0" max="42"></td>
+                <td><input name="attr_armor_rl_max" type="number" min="0" max="42"></td>
+                <td><input name="attr_is_rl" type="number" min="0" max="21"></td>
+                <td><input name="attr_is_rl_max" type="number" min="0" max="21"></td>
+            </tr>
+            <tr>
+                <td>Head</td>
+                <td><input name="attr_armor_h" type="number" min="0" max="9"></td>
+                <td><input name="attr_armor_h_max" type="number" min="0" max="9"></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Center Torso</td>
+                <td><input name="attr_armor_ct" type="number" min="0" max="62"></td>
+                <td><input name="attr_armor_ct_max" type="number" min="0" max="62"></td>
+                <td><input name="attr_is_ct" type="number" min="0" max="31"></td>
+                <td><input name="attr_is_ct_max" type="number" min="0" max="31"></td>
+            </tr>
+            <tr>
+                <td>Left Arm</td>
+                <td><input name="attr_armor_la" type="number" min="0" max="32"></td>
+                <td><input name="attr_armor_la_max" type="number" min="0" max="32"></td>
+                <td><input name="attr_is_la" type="number" min="0" max="17"></td>
+                <td><input name="attr_is_la_max" type="number" min="0" max="17"></td>
+            </tr>
+            <tr>
+                <td>Left Torso</td>
+                <td><input name="attr_armor_lt" type="number" min="0" max="42"></td>
+                <td><input name="attr_armor_lt_max" type="number" min="0" max="42"></td>
+                <td><input name="attr_is_lt" type="number" min="0" max="21"></td>
+                <td><input name="attr_is_lt_max" type="number" min="0" max="21"></td>
+            </tr>
+            <tr>
+                <td>Left Leg</td>
+                <td><input name="attr_armor_ll" type="number" min="0" max="42"></td>
+                <td><input name="attr_armor_ll_max" type="number" min="0" max="42"></td>
+                <td><input name="attr_is_ll" type="number" min="0" max="21"></td>
+                <td><input name="attr_is_ll_max" type="number" min="0" max="21"></td>
+            </tr>
+
+        </table>
+    </div>
+</div>
+    <div>
+        <h3>Weapons Inventory</h3>
+        <div >
+            <div >
+                <div >
+                    #
+                </div>
+                <div >
+                    Type
+                </div>
+                <div >
+                    Location
+                </div>
+                <div >
+                    Reloads
+                </div>
+                <div >
+                    Damage
+                </div>
+                <div >
+                    Heat
+                </div>
+                    
+            </div>
+            <fieldset class="repeating_weapons">
+                <div >
+                    <div >
+                        <input name="attr_wepcount" type="number" min="0" max="10"/>    
+                    </div>
+                    <div >
+                        <input name="attr_weptype"/>        
+                    </div>
+                    <div>
+                        <select name="attr_location">
+                            <option value="RA">Right Arm</option>
+                            <option value="RT">Right Torso</option> 
+                            <option value="RL">Right Leg</option>
+                            <option value="H">Head</option>
+                            <option value="CT">Center Torso</option>
+                            <option value="LL">Left Leg</option>
+                            <option value="LT">Left Torso</option>
+                            <option value="LA">Left Arm</option>
+                        </select>
+                    </div>
+                    <div>
+                        <input name="attr_ammo" type="number" min="0" max="500"/>    
+                    </div>
+                    <div>
+                        <input name="attr_damage" type="number" min="0" max="50"/>    
+                    </div>
+                    <div>
+                        <input name="attr_heat" type="number" min="0" max="50"/>
+                    </div>
+                </div>
+            </fieldset>
+            </div>
+        </table>
+    </div>
+    
+</div>
